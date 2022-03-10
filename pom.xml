@@ -9,9 +9,13 @@
     <version>1.0-SNAPSHOT</version>
 
     <repositories>
-        <repository>
+        <!--<repository>
             <id>public</id>
             <url>https://haoshoku.xyz:1234/repository/public/</url>
+        </repository>-->
+        <repository>
+            <id>papermc</id>
+            <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
         <repository>
             <id>sonatype-oss-snapshots</id>
@@ -20,9 +24,15 @@
     </repositories>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>io.github.waterfallmc</groupId>
             <artifactId>Waterfall-api</artifactId>
+            <version>1.18-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>-->
+        <dependency>
+            <groupId>io.github.waterfallmc</groupId>
+            <artifactId>waterfall-api</artifactId>
             <version>1.18-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
