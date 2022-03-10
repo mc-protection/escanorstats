@@ -5,7 +5,7 @@ import net.md_5.bungee.api.plugin.Command;
 
 public class StatsCommand extends Command {
   public StatsCommand() {
-    super("stats", "escanorstats.stats", "escanorstats");
+    super("escanorstats", "escanorstats.stats", "estats");
   }
 
   @Override
