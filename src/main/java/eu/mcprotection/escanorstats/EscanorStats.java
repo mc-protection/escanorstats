@@ -1,6 +1,7 @@
 package eu.mcprotection.escanorstats;
 
 import com.google.common.io.ByteStreams;
+import eu.mcprotection.escanorstats.commands.StatsCommand;
 import lombok.Getter;
 import net.kyori.adventure.platform.bungeecord.BungeeAudiences;
 import net.md_5.bungee.api.ProxyServer;
@@ -76,6 +77,7 @@ public enum EscanorStats {
       System.out.println("[EscanorStats]: Could not load configuration file!");
       throw new RuntimeException(exception);
     }
+    this.registerCommands();
 
     this.adventure = BungeeAudiences.create(this.getPlugin());
     this.statistics = new EscanorProxyStatistics();
@@ -85,11 +87,11 @@ public enum EscanorStats {
     this.scheduledService = Executors.newSingleThreadScheduledExecutor();
   }
 
-  private BungeeAudiences adventure() {
-    if (this.adventure == null) {
-      throw new IllegalStateException("Cannot retrieve audience provider while plugin is not enabled");
-    }
-    return this.adventure;
+  /**
+   * Register all commands.
+   */
+  private void registerCommands() {
+    this.pluginManager.registerCommand(this.getPlugin(), new StatsCommand());
   }
 
   private File loadResource(@NotNull final String resource) {
