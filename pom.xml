@@ -13,6 +13,10 @@
             <id>public</id>
             <url>https://haoshoku.xyz:1234/repository/public/</url>
         </repository>
+        <repository>
+            <id>sonatype-oss-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -27,6 +31,7 @@
             <groupId>net.kyori</groupId>
             <artifactId>adventure-platform-bungeecord</artifactId>
             <version>4.1.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
